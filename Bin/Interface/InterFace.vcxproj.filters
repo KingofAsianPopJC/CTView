@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\CTViewer\Src\Interface\Interface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\CTViewer\Bin\Interface\moc_Interface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\CTViewer\Src\Interface\Interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\CTViewer\Bin\Interface\ui_InterFace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\CTViewer\Src\Interface\Interface.ui" />
+    <CustomBuild Include="E:\CTViewer\Src\Interface\CMakeLists.txt" />
+    <CustomBuild Include="E:\CTViewer\Bin\CMakeFiles\fc99e48e2e20b9d16acd80e634ee6c59\moc_Interface.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F33DB30A-FB82-354A-B3DB-5F431F465ED9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4DDEC912-3420-39B0-A5F7-6BBD1D191A83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{25534854-823D-38F9-80F5-CFC5B985C4CB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

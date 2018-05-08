@@ -1,0 +1,33 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+
+PROJECT (ImageDisplay)
+
+FIND_PACKAGE(VTK REQUIRED)
+IF(VTK_FOUND)
+    INCLUDE(${VTK_USE_FILE})
+ELSE ()
+    MASSAGE(FATAL_ERROR "Cannnot build without ITK. Please set VTK_DIR.")
+ENDIF()
+
+FIND_PACKAGE(ITK REQUIRED)
+IF(ITK_FOUND)
+    INCLUDE(${ITK_USE_FILE})
+ELSE ()
+    MASSAGE(FATAL_ERROR "Cannnot build without ITK. Please set ITK_DIR.")
+ENDIF()
+
+IF(ITKVtkGlue_LOADED)
+   FIND_PACKAGE(VTK REQUIRED)
+   INCLUDE(${VTK_USE_FILE})
+ELSE()
+   MASSAGE(FATAL_ERROR "You need to select ITKVtkGlue when compile ITK.")
+ENDIF()
+
+SET(ImageDisplay_SOURCES ImageDisplay.cpp)
+SET(ImageDisplay_HEADERS ImageDisplay.h)
+
+ADD_LIBRARY(ImageDisplay  ${ImageDisplay_SOURCES}
+                          ${ImageDisplay_HEADERS}
+		    )
+			
+TARGET_LINK_LIBRARIES(ImageDisplay ${ITK_LIBRARIES} ${VTK_LIBRARIES})

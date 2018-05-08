@@ -1,0 +1,54 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+
+PROJECT (InterFace)
+
+FIND_PACKAGE(VTK REQUIRED)
+IF(VTK_FOUND)
+    INCLUDE(${VTK_USE_FILE})
+ELSE ()
+    MASSAGE(FATAL_ERROR "Cannnot build without ITK. Please set VTK_DIR.")
+ENDIF()
+
+FIND_PACKAGE(ITK REQUIRED)
+IF(ITK_FOUND)
+    INCLUDE(${ITK_USE_FILE})
+ELSE ()
+    MASSAGE(FATAL_ERROR "Cannnot build without ITK. Please set ITK_DIR.")
+ENDIF()
+
+IF(ITKVtkGlue_LOADED)
+   FIND_PACKAGE(VTK REQUIRED)
+   INCLUDE(${VTK_USE_FILE})
+ELSE()
+   MASSAGE(FATAL_ERROR "You need to select ITKVtkGlue when compile ITK.")
+ENDIF()
+
+#FIND_PACKAGE(Qt5 REQUIRED)
+#IF(QT5_FOUND)
+#    INCLUDE(${QT_USE_FILE})
+#ELSE ()
+#    MASSAGE(FATAL_ERROR "Cannnot build without QT5. Please set QT5_DIR.")
+
+FIND_PACKAGE(QT5Widgets REQUIRED QUIET)
+FIND_PACKAGE(QT5Core REQUIRED QUIET)
+FIND_PACKAGE(QT5Gui REQUIRED QUIET)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+SET(InterFace_SOURCES InterFace.cpp)
+SET(InterFace_HEADERS InterFace.h)
+SET(InterFace_UIS InterFace.ui)
+
+Qt5_WRAP_CPP(InterFace_HEADERS_MOC ${InterFace_HEADERS})
+Qt5_WRAP_UI(InterFace_UIS_HEADERS ${InterFace_UIS})
+
+ADD_LIBRARY(InterFace ${InterFace_SOURCES}
+                      ${InterFace_HEADERS}
+					  ${InterFace_UIS_HEADERS}
+					  ${InterFace_UIS}
+					  ${InterFace_HEADERS_MOC}
+		    )
+			
+QT5_USE_MODULES(InterFace Core Gui Widgets)
+
+TARGET_LINK_LIBRARIES(InterFace ${ITK_LIBRARIES} ${VTK_LIBRARIES} ${Qt_LIBRARIES})

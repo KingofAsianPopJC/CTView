@@ -1,0 +1,4 @@
+﻿  Building Custom Rule E:/CTViewer/Src/ImageDisplay/CMakeLists.txt
+  CMake does not need to re-run because E:/CTViewer/Bin/ImageDisplay/CMakeFiles/generate.stamp is up-to-date.
+  ImageDisplay.cpp
+  ImageDisplay.vcxproj -> E:\CTViewer\Bin\ImageDisplay\Debug\ImageDisplay.lib

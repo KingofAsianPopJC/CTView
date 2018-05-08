@@ -1,0 +1,20 @@
+# CMake generation dependency list for this directory.
+E:/CTViewer/Src/ImageDisplay/CMakeLists.txt
+D:/Package/VTK/Bin/VTKConfigVersion.cmake
+D:/Package/VTK/Bin/VTKConfig.cmake
+D:/Package/VTK/Bin/VTKTargets.cmake
+D:/Package/VTK/Src/CMake/vtkModuleAPI.cmake
+D:/CMAKE/share/cmake-3.9/Modules/CMakeConfigurableFile.in
+D:/Package/VTK/Src/CMake/UseVTK.cmake
+D:/Package/ITK/Bin/ITKConfigVersion.cmake
+D:/Package/ITK/Bin/ITKConfig.cmake
+D:/Package/ITK/Src/CMake/ITKModuleAPI.cmake
+D:/Package/ITK/Src/CMake/UseITK.cmake
+D:/Package/ITK/Src/CMake/itkImageIOFactoryRegisterManager.h.in
+D:/Package/ITK/Src/CMake/itkTransformIOFactoryRegisterManager.h.in
+D:/Package/VTK/Bin/VTKConfigVersion.cmake
+D:/Package/VTK/Bin/VTKConfig.cmake
+D:/Package/VTK/Bin/VTKTargets.cmake
+D:/Package/VTK/Src/CMake/vtkModuleAPI.cmake
+D:/CMAKE/share/cmake-3.9/Modules/CMakeConfigurableFile.in
+D:/Package/VTK/Src/CMake/UseVTK.cmake

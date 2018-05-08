@@ -1,0 +1,4 @@
+﻿  Building Custom Rule E:/CTViewer/Src/ImageIO/CMakeLists.txt
+  CMake does not need to re-run because E:/CTViewer/Bin/ImageIO/CMakeFiles/generate.stamp is up-to-date.
+  ImageIO.cpp
+  ImageIO.vcxproj -> E:\CTViewer\Bin\ImageIO\Debug\ImageIO.lib
