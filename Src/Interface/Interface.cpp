@@ -26,6 +26,7 @@ void Interface::mDisplayTransversal()
 	mImageDisplay.DisplayTransversal(mImageSeriesInput.getDicomSeriesReader());
 	mImageDisplay.getImageViewerT()->SetRenderWindow(ui.DisplayWindow_1->GetRenderWindow());
 	mImageDisplay.getImageViewerT()->SetupInteractor(ui.DisplayWindow_1->GetInteractor());
+	ui.DisplayWindow_1->GetInteractor()->SetInteractorStyle(mImageDisplay.getImageInteractorStyle());
 	mImageDisplay.getImageViewerT()->Render();
 	mImageDisplay.getImageViewerT()->GetRenderer()->ResetCamera();
 	mImageDisplay.getImageViewerT()->Render();
@@ -37,6 +38,7 @@ void Interface::mDisplayCorana()
 	mImageDisplay.DisplayCorona(mImageSeriesInput.getDicomSeriesReader());
 	mImageDisplay.getImageViewerC()->SetRenderWindow(ui.DisplayWindow_2->GetRenderWindow());
 	mImageDisplay.getImageViewerC()->SetupInteractor(ui.DisplayWindow_2->GetInteractor());
+	ui.DisplayWindow_2->GetInteractor()->SetInteractorStyle(mImageDisplay.getImageInteractorStyle());
 	mImageDisplay.getImageViewerC()->Render();
 	mImageDisplay.getImageViewerC()->GetRenderer()->ResetCamera();
 	mImageDisplay.getImageViewerC()->Render();
@@ -48,6 +50,7 @@ void Interface::mDisplaySagittal()
 	mImageDisplay.DisplaySagittal(mImageSeriesInput.getDicomSeriesReader());
 	mImageDisplay.getImageViewerS()->SetRenderWindow(ui.DisplayWindow_3->GetRenderWindow());
 	mImageDisplay.getImageViewerS()->SetupInteractor(ui.DisplayWindow_3->GetInteractor());
+	ui.DisplayWindow_3->GetInteractor()->SetInteractorStyle(mImageDisplay.getImageInteractorStyle());
 	mImageDisplay.getImageViewerS()->Render();
 	mImageDisplay.getImageViewerS()->GetRenderer()->ResetCamera();
 	mImageDisplay.getImageViewerS()->Render();

@@ -26,16 +26,19 @@ ENDIF()
 INCLUDE_DIRECTORIES(ImageIO)
 INCLUDE_DIRECTORIES(InterFace)
 INCLUDE_DIRECTORIES(ImageDisplay)
+INCLUDE_DIRECTORIES(ImageInteractor)
 
 ADD_EXECUTABLE(CTViewer main.cpp)
 
 ADD_SUBDIRECTORY(ImageIO)
 ADD_SUBDIRECTORY(InterFace)
 ADD_SUBDIRECTORY(ImageDisplay)
+ADD_SUBDIRECTORY(ImageInteractor)
 
 TARGET_LINK_LIBRARIES(CTViewer
                       ImageIO 
 					  InterFace 
 					  ImageDisplay 
+                                                                                  ImageInteractor
 					  ${VTK_LIBRARIES} 
 					  ${ITK_LIBRARIES})

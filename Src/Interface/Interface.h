@@ -2,7 +2,7 @@
 #include <ui_InterFace.h>
 #include <ImageIO.h>
 #include <ImageDisplay.h>
-
+#include <ImageInteractor.h>
 
 class Interface : public QMainWindow
 {

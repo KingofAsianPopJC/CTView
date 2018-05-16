@@ -7,3 +7,5 @@ E:/CTViewer/Bin/Interface/CMakeFiles/InterFace.dir
 E:/CTViewer/Bin/Interface/CMakeFiles/ALL_BUILD.dir
 E:/CTViewer/Bin/ImageDisplay/CMakeFiles/ImageDisplay.dir
 E:/CTViewer/Bin/ImageDisplay/CMakeFiles/ALL_BUILD.dir
+E:/CTViewer/Bin/ImageInteractor/CMakeFiles/ImageInteractor.dir
+E:/CTViewer/Bin/ImageInteractor/CMakeFiles/ALL_BUILD.dir

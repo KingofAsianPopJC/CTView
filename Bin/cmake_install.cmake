@@ -32,6 +32,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("E:/CTViewer/Bin/ImageIO/cmake_install.cmake")
   include("E:/CTViewer/Bin/Interface/cmake_install.cmake")
   include("E:/CTViewer/Bin/ImageDisplay/cmake_install.cmake")
+  include("E:/CTViewer/Bin/ImageInteractor/cmake_install.cmake")
 
 endif()
 

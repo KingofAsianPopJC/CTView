@@ -683,6 +683,7 @@
 -IE:/CTViewer/Src/ImageIO
 -IE:/CTViewer/Src/InterFace
 -IE:/CTViewer/Src/ImageDisplay
+-IE:/CTViewer/Src/ImageInteractor
 -IE:/CTViewer/Src/Interface
 -IE:/CTViewer/Bin/Interface
 -DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)
