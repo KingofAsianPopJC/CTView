@@ -1,2 +1,5 @@
-﻿  Interface.cpp
+﻿  Generating moc_Interface.cpp
+  moc_Interface.cpp
+  Interface.cpp
+  正在生成代码...
   InterFace.vcxproj -> E:\CTViewer\Bin\Interface\Debug\InterFace.lib

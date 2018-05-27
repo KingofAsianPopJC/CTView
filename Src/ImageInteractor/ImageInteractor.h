@@ -1,11 +1,12 @@
 #ifndef IMAGEINTERACTOR_H
 #define IMAGEINTERACTOR_H// !IMAGEINTERACTOR_H
 
+#include <vtkSmartPointer.h>
 #include <vtkObjectFactory.h>
 #include <vtkInteractorStyleImage.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkTextMapper.h>
-#include <vtkSmartPointer.h>
+#include <vtkSetGet.h>
 #include <vtkImageViewer2.h>
 #include <sstream>
 
@@ -29,16 +30,16 @@ public:
 
 
 protected:
-	vtkImageViewer2* _ImageViewer;
-	vtkTextMapper* _StatusMapper;
+	vtkSmartPointer<vtkImageViewer2> _ImageViewer;
+	vtkSmartPointer<vtkTextMapper> _StatusMapper;
 	int _Slice;
 	int _MinSlice;
 	int _MaxSlice;
 
 public:
-	void SetImageViewer(vtkImageViewer2* imageViewer);
+	void SetImageViewer(vtkSmartPointer<vtkImageViewer2> imageViewer);
 
-	void SetStatusMapper(vtkTextMapper* statusMapper);
+	void SetStatusMapper(vtkSmartPointer<vtkTextMapper> statusMapper);
 
 
 protected:
@@ -52,5 +53,7 @@ protected:
 
 	virtual void OnMouseWheelBackward();
 };
+
+//vtkStandardNewMacro(ImageInteractor);
 
 #endif IMAGEINTERACTOR_H

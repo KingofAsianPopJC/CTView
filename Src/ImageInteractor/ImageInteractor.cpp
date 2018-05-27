@@ -1,13 +1,10 @@
 #include <ImageInteractor.h>
 
-ImageInteractor * ImageInteractor::New()
-{
-	return nullptr;
-}
 
 ImageInteractor::ImageInteractor()
 {
-
+	_ImageViewer = vtkSmartPointer<vtkImageViewer2>::New();
+	_StatusMapper = vtkSmartPointer<vtkTextMapper>::New();
 }
 
 ImageInteractor::~ImageInteractor()
@@ -15,7 +12,7 @@ ImageInteractor::~ImageInteractor()
 
 }
 
-void ImageInteractor::SetImageViewer(vtkImageViewer2* imageViewer)
+void ImageInteractor::SetImageViewer(vtkSmartPointer<vtkImageViewer2> imageViewer)
 {
 	_ImageViewer = imageViewer;
 	_MinSlice = imageViewer->GetSliceMin();
@@ -24,7 +21,7 @@ void ImageInteractor::SetImageViewer(vtkImageViewer2* imageViewer)
 	cout << "Slicer: Min = " << _MinSlice << ", Max = " << _MaxSlice << std::endl;
 }
 
-void ImageInteractor::SetStatusMapper(vtkTextMapper * statusMapper)
+void ImageInteractor::SetStatusMapper(vtkSmartPointer<vtkTextMapper> statusMapper)
 {
 	_StatusMapper = statusMapper;
 }

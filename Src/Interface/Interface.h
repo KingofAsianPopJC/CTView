@@ -16,6 +16,9 @@ private:
 	Ui::CTViewer ui;
 	ImageDisplay mImageDisplay;
 	ImageIO mImageSeriesInput;
+	vtkSmartPointer<ImageInteractor> mImageInteractorT;
+	vtkSmartPointer<ImageInteractor> mImageInteractorC;
+	vtkSmartPointer<ImageInteractor> mImageInteractorS;
 	void invokePress();
 	void mDisplayTransversal();
 	void mDisplayCorana();
