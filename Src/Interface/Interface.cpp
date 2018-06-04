@@ -19,9 +19,9 @@ void Interface::invokePress()
 {
 	connect(ui.Open, SIGNAL(triggered()), this, SLOT(slotOpenFile()));
 	connect(ui.Save, SIGNAL(triggered()), this, SLOT(slotSaveFile()));
-//	connect(ui.ChangeTransversal, SIGNAL(valueChange()), this, SLOT(slotTransversalFrameChange));
-//	connect(ui.ChangeCorona, SIGNAL(valueChange()), this, SLOT(slotCoronaFrameChange()));
-//	connect(ui.ChangeSagittal, SIGNAL(valueChange()), this, SLOT(slotSagittalFrameChange()));
+	connect(ui.ChangeTransversal, SIGNAL(valueChanged(int)), this, SLOT(slotTransversalFrameChange(int)));
+	connect(ui.ChangeCorona, SIGNAL(valueChanged(int)), this, SLOT(slotCoronaFrameChange(int)));
+	connect(ui.ChangeSagittal, SIGNAL(valueChanged(int)), this, SLOT(slotSagittalFrameChange(int)));
 }
 
 void Interface::mDisplayTransversal()
@@ -41,9 +41,9 @@ void Interface::mDisplayTransversal()
 void Interface::mDisplayCorana()
 {
 	mImageDisplay.DisplayCorona(mImageSeriesInput.getDicomSeriesReader());
-	mImageDisplay.getImageViewerC()->SetRenderWindow(ui.DisplayWindow_2->GetRenderWindow());
 	mImageInteractorC->SetImageViewer(mImageDisplay.getImageViewerC());
 	mImageInteractorC->SetStatusMapper(mImageDisplay.getTextMappperC());
+	mImageDisplay.getImageViewerC()->SetRenderWindow(ui.DisplayWindow_2->GetRenderWindow());
 	mImageDisplay.getImageViewerC()->SetupInteractor(ui.DisplayWindow_2->GetInteractor());
 	ui.DisplayWindow_2->GetInteractor()->SetInteractorStyle(mImageInteractorC);
 	mImageDisplay.getImageViewerC()->Render();
@@ -55,9 +55,9 @@ void Interface::mDisplayCorana()
 void Interface::mDisplaySagittal()
 {
 	mImageDisplay.DisplaySagittal(mImageSeriesInput.getDicomSeriesReader());
-	mImageDisplay.getImageViewerS()->SetRenderWindow(ui.DisplayWindow_3->GetRenderWindow());
 	mImageInteractorS->SetImageViewer(mImageDisplay.getImageViewerS());
 	mImageInteractorS->SetStatusMapper(mImageDisplay.getTextMappperS());
+	mImageDisplay.getImageViewerS()->SetRenderWindow(ui.DisplayWindow_3->GetRenderWindow());
 	mImageDisplay.getImageViewerS()->SetupInteractor(ui.DisplayWindow_3->GetInteractor());
 	ui.DisplayWindow_3->GetInteractor()->SetInteractorStyle(mImageInteractorS);
 	mImageDisplay.getImageViewerS()->Render();
@@ -81,12 +81,27 @@ void Interface::slotSaveFile()
 
 void Interface::slotTransversalFrameChange(int value)
 {
+	ui.ChangeTransversal->setMaximum(mImageDisplay.getImageViewerT()->GetSliceMax());
+	mImageDisplay.getImageViewerT()->SetSlice(value);
+	std::string msg = StatusMessage::Format(value, mImageDisplay.getImageViewerT()->GetSliceMax());
+	mImageDisplay.getTextMappperT()->SetInput(msg.c_str());
+	mImageDisplay.getImageViewerT()->Render();
 }
 
 void Interface::slotCoronaFrameChange(int value)
 {
+	ui.ChangeCorona->setMaximum(mImageDisplay.getImageViewerC()->GetSliceMax());
+	mImageDisplay.getImageViewerC()->SetSlice(value);
+	std::string msg = StatusMessage::Format(value, mImageDisplay.getImageViewerC()->GetSliceMax());
+	mImageDisplay.getTextMappperC()->SetInput(msg.c_str());
+	mImageDisplay.getImageViewerC()->Render();
 }
 
 void Interface::slotSagittalFrameChange(int value)
 {
+	ui.ChangeSagittal->setMaximum(mImageDisplay.getImageViewerS()->GetSliceMax());
+	mImageDisplay.getImageViewerS()->SetSlice(value);
+	std::string msg = StatusMessage::Format(value, mImageDisplay.getImageViewerS()->GetSliceMax());
+	mImageDisplay.getTextMappperS()->SetInput(msg.c_str());
+	mImageDisplay.getImageViewerS()->Render();
 }

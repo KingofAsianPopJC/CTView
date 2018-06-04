@@ -31,7 +31,6 @@ public:
     QAction *Open;
     QAction *Save;
     QWidget *centralwidget;
-    QVTKWidget *DisplayWindow_1;
     QVTKWidget *DisplayWindow_2;
     QVTKWidget *DisplayWindow_3;
     QSlider *ChangeCorona;
@@ -40,6 +39,7 @@ public:
     QLabel *Transversal;
     QLabel *Corona;
     QLabel *Sagittal;
+    QVTKWidget *DisplayWindow_1;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -56,18 +56,26 @@ public:
         Save->setObjectName(QStringLiteral("Save"));
         centralwidget = new QWidget(CTViewer);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        DisplayWindow_1 = new QVTKWidget(centralwidget);
-        DisplayWindow_1->setObjectName(QStringLiteral("DisplayWindow_1"));
-        DisplayWindow_1->setGeometry(QRect(20, 40, 350, 350));
-        DisplayWindow_1->setStyleSheet(QStringLiteral(""));
+		
+		DisplayWindow_1 = new QVTKWidget(centralwidget);
+		DisplayWindow_1->setObjectName(QStringLiteral("DisplayWindow_1"));
+		DisplayWindow_1->setGeometry(QRect(20, 40, 350, 350));
+		DisplayWindow_1->setStyleSheet(QLatin1String("background-color: rgb(0, 0, 0);\n"
+"color: rgb(0, 0, 255);\n"
+"border-color: rgb(0, 0, 0);"));
         DisplayWindow_2 = new QVTKWidget(centralwidget);
         DisplayWindow_2->setObjectName(QStringLiteral("DisplayWindow_2"));
         DisplayWindow_2->setGeometry(QRect(430, 40, 350, 350));
-        DisplayWindow_2->setStyleSheet(QStringLiteral(""));
-        DisplayWindow_3 = new QVTKWidget(centralwidget);
-        DisplayWindow_3->setObjectName(QStringLiteral("DisplayWindow_3"));
-        DisplayWindow_3->setGeometry(QRect(20, 430, 350, 350));
-        DisplayWindow_3->setStyleSheet(QStringLiteral(""));
+        DisplayWindow_2->setStyleSheet(QLatin1String("background-color: rgb(0, 0, 0);\n"
+"color: rgb(0, 0, 255);\n"
+"border-color: rgb(0, 0, 0);"));
+		DisplayWindow_3 = new QVTKWidget(centralwidget);
+		DisplayWindow_3->setObjectName(QStringLiteral("DisplayWindow_3"));
+		DisplayWindow_3->setGeometry(QRect(20, 430, 350, 350));
+		DisplayWindow_3->setStyleSheet(QLatin1String("background-color: rgb(0, 0, 0);\n"
+"color: rgb(0, 0, 255);\n"
+"border-color: rgb(0, 0, 0);"));
+
         ChangeCorona = new QSlider(centralwidget);
         ChangeCorona->setObjectName(QStringLiteral("ChangeCorona"));
         ChangeCorona->setGeometry(QRect(490, 580, 281, 22));
